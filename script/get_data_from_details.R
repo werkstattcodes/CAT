@@ -3,7 +3,7 @@ library(here)
 library(rvest)
 library(glue)
 
-id <- seq(0, 3000, 1)
+id <- seq(0, 3500, 1)
 df_links <- glue("https://juris.ohchr.org/Search/Details/{id}") %>% 
   enframe(name=NULL) %>% 
   mutate(value=as.character(value))
@@ -51,4 +51,4 @@ df_wide <- df_results_3000 %>%
 
 n_distinct(df_wide$`Communication number(s)`) #2576
 
-
+#test_country_twice <- fn_scrap("https://juris.ohchr.org/Search/Details/50")
